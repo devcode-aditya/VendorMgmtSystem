@@ -37,6 +37,39 @@ export default function VendorProfilePage() {
               </div>
             </div>
           </div>
+          <div className="mt-8 rounded-xl border border-zinc-200/60 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-zinc-700/60 dark:bg-zinc-900/70">
+            <h2 className="mb-3 text-sm font-medium text-zinc-800 dark:text-zinc-200">Documents</h2>
+            <div className="mb-3 flex justify-end">
+              <button className="rounded bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700">Upload Document</button>
+            </div>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-zinc-500">
+                  <th className="py-2 pr-3 text-left">Document</th>
+                  <th className="py-2 pr-3 text-left">Uploaded</th>
+                  <th className="py-2 text-left">Status</th>
+                  <th className="py-2 text-left">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="text-zinc-800 dark:text-zinc-200">
+                {[
+                  { name: "GST Certificate.pdf", uploaded: "2025-10-01", status: "Verified" },
+                  { name: "PAN Card.jpg", uploaded: "2025-10-05", status: "Pending" },
+                  { name: "Bank Statement.pdf", uploaded: "2025-10-10", status: "Rejected" },
+                ].map((doc) => (
+                  <tr key={doc.name} className="border-b last:border-0 border-zinc-200/60 dark:border-zinc-700/60">
+                    <td className="py-2 pr-3 font-medium">{doc.name}</td>
+                    <td className="py-2 pr-3">{doc.uploaded}</td>
+                    <td className="py-2">{doc.status}</td>
+                    <td className="py-2 flex gap-2">
+                      <button className="rounded bg-green-600 px-2 py-1 text-xs font-medium text-white hover:bg-green-700">Download</button>
+                      <button className="rounded bg-rose-600 px-2 py-1 text-xs font-medium text-white hover:bg-rose-700">Delete</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </main>
     </VendorAuthGuard>

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import VendorAuthGuard from "../../screens/vendorAuth";
 
 const items = [
@@ -17,6 +18,12 @@ export default function VendorItemsPage() {
           <div className="rounded-xl border border-zinc-200/60 bg-white/80 p-4 shadow-sm backdrop-blur dark:border-zinc-700/60 dark:bg-zinc-900/70">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="text-sm font-medium text-zinc-800 dark:text-zinc-200">Item Catalog</h2>
+              <Link
+                href="/vendor/items/add"
+                className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                Add Item
+              </Link>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">

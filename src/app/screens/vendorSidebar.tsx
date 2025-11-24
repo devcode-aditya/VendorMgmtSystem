@@ -5,6 +5,10 @@ const links = [
   { href: "/vendordashboard", label: "Overview" },
   { href: "/vendor/items", label: "Items" },
   { href: "/vendor/orders", label: "Orders" },
+  { href: "/vendor/quotes", label: "Quotes" },
+  { href: "/vendor/invoices", label: "Invoices" },
+  { href: "/vendor/payments", label: "Payments" },
+  { href: "/vendor/support", label: "Support" },
   { href: "/vendor/profile", label: "Profile" },
 ];
 
